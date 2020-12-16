@@ -18,8 +18,9 @@ namespace Tamagotchi.Tests
         public void PetConstructor_CheckPropertyValues_PetProperties()
         {
             Pet newPet = new Pet("name");
-            int testFood = 60;
-            Assert.AreEqual(testFood, newPet.Food);
+            int testFood = 100;
+            Assert.AreEqual(testFood, newPet.Food)
+            ;
         }
     }
 }
