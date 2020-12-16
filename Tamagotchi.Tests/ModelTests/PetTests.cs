@@ -87,7 +87,7 @@ namespace Tamagotchi.Tests
             Pet newPet02 = new Pet(petName02);
 
             //Act
-            Pet result = Pet.Find(1);
+            Pet result = Pet.Find(2);
 
             //Assert
             Assert.AreEqual(newPet02, result);
