@@ -1,6 +1,6 @@
-namespace ProjectName.Models
+namespace Tamagotchi.Models
 {
-    public class ClassName
+    public class Pet
     {
         //public string getter and setters
     }

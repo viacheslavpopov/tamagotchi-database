@@ -1,14 +1,14 @@
-# Application Name
+# Tamagotchi
 
 <div align="center">
 <img src="https://github.com/agatakolohe.png" width="200px" height="auto" >
+<img src="https://github.com/dani-t-codes.png" width="200px" height="auto" >
+
 </div>
-<p align="center">Description of application, date-2020</p>
-<p align="center"> By Agata Kolodziej</p>
+<p align="center">MVC Tamagotchi App, 12-16-2020</p>
+<p align="center"> By Agata Kolodziej & Danielle Thompson</p>
 
 ## Description
-
-Purpose usage, detailed explanation what is does and any other information you want users and other developers to have
 
 ## Specifications
 
@@ -94,4 +94,4 @@ If any errors or bugs occur with installation delete both bin and obj folders an
 
 This software is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).
 
-Copyright (c) 2020 Agata Kolodziej
+Copyright (c) 2020 Agata Kolodziej & Danielle Thompson
