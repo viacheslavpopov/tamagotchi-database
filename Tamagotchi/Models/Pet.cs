@@ -28,7 +28,7 @@ namespace Tamagotchi.Models
             _instances.Clear();
         }
         public static Pet Find(int searchId)
-        {
+        {   // will throw exception if search # is > current range of Pets in program
             return _instances[searchId - 1];
         }
 
