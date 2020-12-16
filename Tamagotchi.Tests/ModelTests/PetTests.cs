@@ -98,7 +98,7 @@ namespace Tamagotchi.Tests
         {
             string petName01 = "Tomi";
             Pet newPet01 = new Pet(petName01);
-            int testFedPet = 100;
+            int testFedPet = 105;
 
             newPet01.FeedPet();
 

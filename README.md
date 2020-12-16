@@ -39,7 +39,7 @@ In the land of Tamagotchi, time passes, similar to how it passes for humans. Eve
 
 Describe: CreateForm(add: Tamagotchi Name)
 
-Describe: Feed(property food(0-100))
+Describe: Feed(property food(0-100)) 
 
 Describe: Play(property happiness(0-100))
 
