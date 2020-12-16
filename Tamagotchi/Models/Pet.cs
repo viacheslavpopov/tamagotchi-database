@@ -10,8 +10,8 @@ namespace Tamagotchi.Models
         {
             Name = name;
             Id = 1; //_instances.Count;
-            Food = food;
-            Life = life;
+            // Food = food;
+            // Life = life;
         }
 
     }

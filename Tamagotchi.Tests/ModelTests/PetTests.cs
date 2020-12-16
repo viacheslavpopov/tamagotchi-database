@@ -8,6 +8,11 @@ namespace Tamagotchi.Tests
     [TestClass]
     public class PetTests
     {
-
+        [TestMethod]
+        public void PetConstructor_CreatesInstanceOfPet_Pet()
+        {
+            Pet newPet = new Pet("name");
+            Assert.AreEqual(typeof(Pet), newPet.GetType());
+        }
     }
 }
