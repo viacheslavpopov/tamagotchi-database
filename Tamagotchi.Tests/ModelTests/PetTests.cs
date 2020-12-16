@@ -18,8 +18,12 @@ namespace Tamagotchi.Tests
         public void PetConstructor_CheckPropertyValues_PetProperties()
         {
             Pet newPet = new Pet("name");
+            int testId = 1;
             int testFood = 100;
-            Assert.AreEqual(testFood, newPet.Food)
+            int testLife = 100;
+            Assert.AreEqual(testFood, newPet.Food);
+            Assert.AreEqual(testId, newPet.Id);
+            Assert.AreEqual(testLife, newPet.Life);
             ;
         }
     }
