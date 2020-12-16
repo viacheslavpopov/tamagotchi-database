@@ -31,6 +31,15 @@ namespace Tamagotchi.Models
         {   // will throw exception if search # is > current range of Pets in program
             return _instances[searchId - 1];
         }
+        public void FeedPet()
+        {
+            Life += 20;
+        }
 
+        //Describe: Feed(property food(0-100))
+
+        //Describe: Play(property happiness(0-100))
+
+        //Describe: PutToSleep(property rest(0-100))
     }
 }

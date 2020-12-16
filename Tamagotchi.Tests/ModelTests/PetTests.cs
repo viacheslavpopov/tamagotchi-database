@@ -93,5 +93,18 @@ namespace Tamagotchi.Tests
             Assert.AreEqual(newPet02, result);
         }
 
+        [TestMethod]
+        public void FeedPet_AddsFiveLifePoints_Life()
+        {
+            string petName01 = "Tomi";
+            Pet newPet01 = new Pet(petName01);
+            int testFedPet = 100;
+
+            newPet01.FeedPet();
+
+            Assert.AreEqual(testFedPet, newPet01.Life);
+
+        }
+
     }
 }

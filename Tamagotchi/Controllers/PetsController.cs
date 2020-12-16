@@ -34,5 +34,12 @@ namespace Tamagotchi.Controllers
             return View(foundPet);
         }
 
+        [HttpPost("/items/delete")]
+        public ActionResult DeleteAll()
+        {
+            Pet.ClearAll();
+            return View();
+        }
+
     }
 }
