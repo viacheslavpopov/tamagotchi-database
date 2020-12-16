@@ -33,7 +33,7 @@ namespace Tamagotchi.Models
         }
         public void FeedPet()
         {
-            Life += 20;
+            Life += 5;
         }
 
         //Describe: Feed(property food(0-100))
