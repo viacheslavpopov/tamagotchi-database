@@ -10,7 +10,7 @@ namespace Tamagotchi.Tests
     {
         public void Dispose()
         {
-            // Pet.ClearAll();
+            Pet.ClearAll();
         }
 
         [TestMethod]
@@ -52,7 +52,6 @@ namespace Tamagotchi.Tests
             //Arrange
             string petName01 = "Tomi";
             string petName02 = "Loganchi";
-            string petName03 = "Boris";
             Pet newPet01 = new Pet(petName01);
             Pet newPet02 = new Pet(petName02);
             List<Pet> newPetList = new List<Pet> { newPet01, newPet02 };
@@ -64,19 +63,19 @@ namespace Tamagotchi.Tests
             CollectionAssert.AreEqual(newPetList, result);
         }
 
-        // [TestMethod]
-        // public void GetId_ItemsInstantiateWithAnIdAndGetterReturns_Int()
-        // {
-        //   //Arrange
-        //   string description = "Walk the dog.";
-        //   Item newItem = new Item(description);
+        [TestMethod]
+        public void GetId_PetsInstantiateWithAnIdAndGetterReturns_Int()
+        {
+            //Arrange
+            string petName = "Boris";
+            Pet newPet = new Pet(petName);
 
-        //   //Act
-        //   int result = newItem.Id;
+            //Act
+            int result = newPet.Id;
 
-        //   //Assert
-        //   Assert.AreEqual(1, result);
-        // }
+            //Assert
+            Assert.AreEqual(3, result);
+        }
 
         // [TestMethod]
         // public void Find_ReturnsCorrectItem_Item()
