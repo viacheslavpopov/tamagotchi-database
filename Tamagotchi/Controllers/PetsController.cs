@@ -10,7 +10,7 @@ namespace Tamagotchi.Controllers
         public ActionResult Index()
         {
             // Pet myPet = new Pet(petName);
-            List<Pet> allPets = Item.GetAll();
+            List<Pet> allPets = Pet.GetAll();
             return View(allPets);
         }
 
