@@ -14,5 +14,12 @@ namespace Tamagotchi.Tests
             Pet newPet = new Pet("name");
             Assert.AreEqual(typeof(Pet), newPet.GetType());
         }
+        [TestMethod]
+        public void PetConstructor_CheckPropertyValues_PetProperties()
+        {
+            Pet newPet = new Pet("name");
+            int testFood = 60;
+            Assert.AreEqual(testFood, newPet.Food);
+        }
     }
 }
