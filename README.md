@@ -10,17 +10,44 @@
 
 ## Description
 
+In the 90's Tamagotchis were popular. They were electronic pets that you could carry around and press buttons to feed it, play with it, and put it to sleep. If you didn't give it enough food, attention, or rest, it would die.
+
+This web app creates your own virtual Tamagotchi pet! Give your new pet a name through our setup form. Your pet will require differing amounts of food, attention, and rest that you will need to tend to.
+
+All the Tamagotchi pets you collect over time will be display in your home screen with the values of their individual needs (i.e. their properties).
+
+Different buttons in your home page will call methods to feed your pet, play with your pet, and put it to sleep. These methods modify the properties of a single Tamagotchi object at a time - such as a food property.
+
+In the land of Tamagotchi, time passes, similar to how it passes for humans. Every time you press a pet's property, the food, happiness and sleep properties of all Tamagotchis should decrease. If any of these properties get to 0, your Tamagotchi object will report that it's dead.
+
 ## Specifications
 
 <details>
   <summary>Expand Specs</summary>
 
-### Describe: functionName()
+### Describe: Pet()
 
-| Test | Expect |
-| ---- | ------ |
+| Test                                                                       | Expect                                       |
+| -------------------------------------------------------------------------- | -------------------------------------------- |
+| Create a Pet Object with properties: Name, Id, Food, Happiness, Rest, Life | Pet(string Name, int Id, int Food, int Life) |
 
 </details>
+
+### Tests
+
+Describe: CreateForm(add: Tamagotchi Name)
+
+Describe: Feed(property food(0-100))
+
+Describe: Play(property happiness(0-100))
+
+Describe: PutToSleep(property rest(0-100))
+
+Describe: AddHealthPoints(property life(0-100))
+
+Describe: SubtractHealthPoints(property life(0-100))
+
+Describe: TimePass(ToDecrease(food, happiness, rest, life))
 
 ## Setup/Installation Requirements
 
