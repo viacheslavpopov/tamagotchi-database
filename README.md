@@ -31,6 +31,8 @@ In the land of Tamagotchi, time passes, similar to how it passes for humans. Eve
 | -------------------------------------------------------------------------- | -------------------------------------------- |
 | Create a Pet Object with properties: Name, Id, Food, Happiness, Rest, Life | Pet(string Name, int Id, int Food, int Life) |
 
+|
+
 </details>
 
 ### Tests
