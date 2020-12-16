@@ -17,7 +17,7 @@ namespace Tamagotchi.Controllers
         public ActionResult New()
         {
             // List<Item> allItems = Item.GetAll();
-            return View(allItems);
+            return View(myPet);
         }
 
         [HttpPost("/pets")]
