@@ -34,11 +34,20 @@ namespace Tamagotchi.Controllers
             return View(foundPet);
         }
 
-        [HttpPost("/items/delete")]
+        [HttpPost("/pets/delete")]
         public ActionResult DeleteAll()
         {
             Pet.ClearAll();
             return View();
+        }
+
+        [HttpGet("/pets/{id}/edit")] 
+        public ActionResult Edit(string petName)
+        {
+            Pet feedPet = new Pet(petName);
+            feedPet.FeedPet();
+            // FeedPet(id);
+            return RedirectToAction("Show");
         }
 
     }

@@ -32,7 +32,7 @@ namespace Tamagotchi.Models
             return _instances[searchId - 1];
         }
         public void FeedPet()
-        {
+        { // Pet[02].FeedPet(); FeedPet(2)
             Life += 5;
         }
 
