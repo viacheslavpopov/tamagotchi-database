@@ -126,7 +126,7 @@ namespace Tamagotchi.Tests
             Pet foundPet = Pet.Find(newPet01.Id);
 
             //Assert
-            Assert.AreEqual(newPet02, foundPet);
+            Assert.AreEqual(newPet01, foundPet);
         }
 
         // [TestMethod]

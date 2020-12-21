@@ -118,10 +118,35 @@ namespace Tamagotchi.Models
             }
         }
 
-        public static Pet Find(int searchId)
+        public static Pet Find(int id)
         {   // will throw exception if search # is > current range of Pets in program
-            Pet placeholderPet = new Pet("placeholder item");
-            return placeholderPet;
+            MySqlConnection conn = DB.Connection();
+            conn.Open();
+
+            var cmd = conn.CreateCommand() as MySqlCommand;
+            cmd.CommandText = @"SELECT * FROM `pets` WHERE id = @thisId;";
+
+            MySqlParameter thisId = new MySqlParameter();
+            thisId.ParameterName = "@thisId";
+            thisId.Value = id;
+            cmd.Parameters.Add(thisId);
+
+            var rdr = cmd.ExecuteReader() as MySqlDataReader;
+            int petId = 0;
+            string petName = "";
+            while (rdr.Read())
+            {
+                petId = rdr.GetInt32(0);
+                petName = rdr.GetString(1);
+            }
+            Pet foundPet = new Pet(petId, petName);
+
+            conn.Close();
+            if (conn != null)
+            {
+                conn.Dispose();
+            }
+            return foundPet;
         }
 
         // public void FeedPet()
