@@ -107,25 +107,27 @@ namespace Tamagotchi.Tests
         //     Assert.AreEqual(1, result);
         // }
 
-        // [TestMethod]
-        // public void Find_ReturnsCorrectPet_Pet()
-        // {
-        //     //Arrange
-        //     string petName01 = "Tomi";
-        //     string petName02 = "Loganchi";
-        //     int petFoodPts01 = 100;
-        //     int petFoodPts02 = 100;
-        //     int petLifePts01 = 100;
-        //     int petLifePts02 = 100;
-        //     Pet newPet01 = new Pet(petName01, petFoodPts01, petLifePts01);
-        //     Pet newPet02 = new Pet(petName02, petFoodPts02, petLifePts02);
+        [TestMethod]
+        public void Find_ReturnsCorrectPetFromDatabase_Pet()
+        {
+            //Arrange
+            string petName01 = "Tomi";
+            string petName02 = "Loganchi";
+            // int petFoodPts01 = 100;
+            // int petFoodPts02 = 100;
+            // int petLifePts01 = 100;
+            // int petLifePts02 = 100;
+            Pet newPet01 = new Pet(petName01); //, petFoodPts01, petLifePts01);
+            newPet01.Save();
+            Pet newPet02 = new Pet(petName02); //, petFoodPts02, petLifePts02);
+            newPet02.Save();
 
-        //     //Act
-        //     Pet result = Pet.Find(2);
+            //Act
+            Pet foundPet = Pet.Find(newPet01.Id);
 
-        //     //Assert
-        //     Assert.AreEqual(newPet02, result);
-        // }
+            //Assert
+            Assert.AreEqual(newPet02, foundPet);
+        }
 
         // [TestMethod]
         // public void FeedPet_AddsFiveLifePoints_Life()
