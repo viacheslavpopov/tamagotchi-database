@@ -16,14 +16,14 @@ namespace Tamagotchi.Tests
         [TestMethod]
         public void PetConstructor_CreatesInstanceOfPet_Pet()
         {
-            Pet newPet = new Pet("name");
+            Pet newPet = new Pet("name", 100, 100);
             Assert.AreEqual(typeof(Pet), newPet.GetType());
         }
 
         [TestMethod]
         public void PetConstructor_CheckPropertyValues_PetProperties()
         {
-            Pet newPet = new Pet("name");
+            Pet newPet = new Pet("name", 100, 100);
             int testId = 1;
             int testFood = 100;
             int testLife = 100;
@@ -52,8 +52,12 @@ namespace Tamagotchi.Tests
             //Arrange
             string petName01 = "Tomi";
             string petName02 = "Loganchi";
-            Pet newPet01 = new Pet(petName01);
-            Pet newPet02 = new Pet(petName02);
+            int petFoodPts01 = 100;
+            int petFoodPts02 = 100;
+            int petLifePts01 = 100;
+            int petLifePts02 = 100;
+            Pet newPet01 = new Pet(petName01, petFoodPts01, petLifePts01);
+            Pet newPet02 = new Pet(petName02, petFoodPts02, petLifePts02);
             List<Pet> newPetList = new List<Pet> { newPet01, newPet02 };
 
             //Act
@@ -68,7 +72,9 @@ namespace Tamagotchi.Tests
         {
             //Arrange
             string petName = "Boris";
-            Pet newPet = new Pet(petName);
+            int petFoodPts01 = 100;
+            int petLifePts01 = 100;
+            Pet newPet = new Pet(petName, petFoodPts01, petLifePts01);
 
             //Act
             int result = newPet.Id;
@@ -83,8 +89,12 @@ namespace Tamagotchi.Tests
             //Arrange
             string petName01 = "Tomi";
             string petName02 = "Loganchi";
-            Pet newPet01 = new Pet(petName01);
-            Pet newPet02 = new Pet(petName02);
+            int petFoodPts01 = 100;
+            int petFoodPts02 = 100;
+            int petLifePts01 = 100;
+            int petLifePts02 = 100;
+            Pet newPet01 = new Pet(petName01, petFoodPts01, petLifePts01);
+            Pet newPet02 = new Pet(petName02, petFoodPts02, petLifePts02);
 
             //Act
             Pet result = Pet.Find(2);
@@ -97,7 +107,9 @@ namespace Tamagotchi.Tests
         public void FeedPet_AddsFiveLifePoints_Life()
         {
             string petName01 = "Tomi";
-            Pet newPet01 = new Pet(petName01);
+            int petFoodPts01 = 100;
+            int petLifePts01 = 100;
+            Pet newPet01 = new Pet(petName01, petFoodPts01, petLifePts01);
             int testFedPet = 105;
 
             newPet01.FeedPet();

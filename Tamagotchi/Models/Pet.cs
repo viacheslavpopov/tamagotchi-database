@@ -11,11 +11,11 @@ namespace Tamagotchi.Models
         public int Food { get; set; } = 100;
         public int Life { get; set; } = 100;
         private static List<Pet> _instances = new List<Pet> { };
-        public Pet(string name)
+        public Pet(string name, int food, int life)
         {
             Name = name;
-            // Food = food;
-            // Life = life;
+            Food = food;
+            Life = life;
             _instances.Add(this);
             Id = _instances.Count;
         }
@@ -34,6 +34,16 @@ namespace Tamagotchi.Models
         public void FeedPet()
         { // Pet[02].FeedPet(); FeedPet(2)
             Life += 5;
+        }
+
+        public void Play()
+        {
+            Life += 5;
+        }
+
+        public void PutToSleep()
+        {
+            Life += 10;
         }
 
         //Describe: Feed(property food(0-100))
