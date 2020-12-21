@@ -58,6 +58,16 @@ namespace Tamagotchi.Tests
             Assert.AreEqual(firstPet, secondPet);
         }
 
+        [TestMethod]
+        public void Save_SavesToDatabase_PetList()
+        {
+            Pet testPet = new Pet("Tomi", 100, 100);
+            testPet.Save();
+            List<Pet> result = Pet.GetAll();
+            List<Pet> testList = new List<Pet>{testPet};
+            CollectionAssert.AreEqual(testList, result);
+        }
+
         // [TestMethod]
         // public void GetAll_ReturnsPets_PetList()
         // {
