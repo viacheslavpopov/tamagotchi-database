@@ -39,8 +39,9 @@ namespace Tamagotchi.Models
                 else
                 {
                     Pet newPet = (Pet) otherPet;
+                    bool idEquality = (this.Id == newPet.Id);
                     bool nameEquality = (this.Name == newPet.Name);
-                    return nameEquality;
+                    return (idEquality && nameEquality);
                 }
             }
         

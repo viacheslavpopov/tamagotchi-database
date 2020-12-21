@@ -68,26 +68,28 @@ namespace Tamagotchi.Tests
             CollectionAssert.AreEqual(testList, result);
         }
 
-        // [TestMethod]
-        // public void GetAll_ReturnsPets_PetList()
-        // {
-        //     //Arrange
-        //     string petName01 = "Tomi";
-        //     string petName02 = "Loganchi";
-        //     int petFoodPts01 = 100;
-        //     int petFoodPts02 = 100;
-        //     int petLifePts01 = 100;
-        //     int petLifePts02 = 100;
-        //     Pet newPet01 = new Pet(petName01, petFoodPts01, petLifePts01);
-        //     Pet newPet02 = new Pet(petName02, petFoodPts02, petLifePts02);
-        //     List<Pet> newPetList = new List<Pet> { newPet01, newPet02 };
+        [TestMethod]
+        public void GetAll_ReturnsPets_PetList()
+        {
+            //Arrange
+            string petName01 = "Tomi";
+            string petName02 = "Loganchi";
+            // int petFoodPts01 = 100;
+            // int petFoodPts02 = 100;
+            // int petLifePts01 = 100;
+            // int petLifePts02 = 100;
+            Pet newPet01 = new Pet(petName01);
+            newPet01.Save();
+            Pet newPet02 = new Pet(petName02);
+            newPet02.Save();
+            List<Pet> newPetList = new List<Pet> { newPet01, newPet02 };
 
-        //     //Act
-        //     List<Pet> result = Pet.GetAll();
+            //Act
+            List<Pet> result = Pet.GetAll();
 
-        //     //Assert
-        //     CollectionAssert.AreEqual(newPetList, result);
-        // }
+            //Assert
+            CollectionAssert.AreEqual(newPetList, result);
+        }
 
         // [TestMethod]
         // public void GetId_PetsInstantiateWithAnIdAndGetterReturns_Int()
