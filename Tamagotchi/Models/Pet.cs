@@ -31,6 +31,21 @@ namespace Tamagotchi.Models
             Food = food;
             Life = life;
         }
+
+    public override bool Equals(System.Object otherPet)
+        {
+            if (!(otherPet is Pet))
+            {
+                return false;
+            }
+            else
+            {
+                Pet newPet = (Pet) otherPet;
+                bool nameEquality = (this.Name == newPet.Name);
+                return nameEquality;
+            }
+        }
+
         public static List<Pet> GetAll()
         {
             List<Pet> allPets = new List<Pet> { };
