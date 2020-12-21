@@ -21,9 +21,9 @@ namespace Tamagotchi.Controllers
         }
 
         [HttpPost("/pets")]
-        public ActionResult Create(string petName, int food, int life)
+        public ActionResult Create(string petName)
         {
-            Pet myPet = new Pet(petName, food, life);
+            Pet myPet = new Pet(petName);
             return RedirectToAction("Index");
         }
 
@@ -41,14 +41,14 @@ namespace Tamagotchi.Controllers
             return View();
         }
 
-        [HttpGet("/pets/{id}/edit")] 
-        public ActionResult Edit(string petName, int food, int life)
-        {
-            Pet feedPet = new Pet(petName, food, life);
-            feedPet.FeedPet();
-            // FeedPet(id);
-            return RedirectToAction("Show");
-        }
+        // [HttpGet("/pets/{id}/edit")] 
+        // public ActionResult Edit(string petName, int food, int life)
+        // {
+        //     Pet feedPet = new Pet(petName, food, life);
+        //     feedPet.FeedPet();
+        //     // FeedPet(id);
+        //     return RedirectToAction("Show");
+        // }
 
     }
 }

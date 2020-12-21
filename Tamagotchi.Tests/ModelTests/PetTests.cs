@@ -53,15 +53,15 @@ namespace Tamagotchi.Tests
         [TestMethod]
         public void Equals_ReturnsTrueIfDescriptionsAreTheSame_Pet()
         {
-            Pet firstPet = new Pet("Tomi", 100, 100);
-            Pet secondPet = new Pet("Tomi", 100, 100);
+            Pet firstPet = new Pet("Tomi");
+            Pet secondPet = new Pet("Tomi");
             Assert.AreEqual(firstPet, secondPet);
         }
 
         [TestMethod]
         public void Save_SavesToDatabase_PetList()
         {
-            Pet testPet = new Pet("Tomi", 100, 100);
+            Pet testPet = new Pet(1, "Tomi");
             testPet.Save();
             List<Pet> result = Pet.GetAll();
             List<Pet> testList = new List<Pet>{testPet};
