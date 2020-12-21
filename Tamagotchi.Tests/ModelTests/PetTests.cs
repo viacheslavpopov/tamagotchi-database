@@ -50,6 +50,14 @@ namespace Tamagotchi.Tests
             CollectionAssert.AreEqual(newPetList, result);
         }
 
+        [TestMethod]
+        public void Equals_ReturnsTrueIfDescriptionsAreTheSame_Pet()
+        {
+            Pet firstPet = new Pet("Tomi", 100, 100);
+            Pet secondPet = new Pet("Tomi", 100, 100);
+            Assert.AreEqual(firstPet, secondPet);
+        }
+
         // [TestMethod]
         // public void GetAll_ReturnsPets_PetList()
         // {
