@@ -1,7 +1,18 @@
+@{
+    Layout = "_Layout";  
+}
+
+@model Tamagotchi.Models.Pet
+
 <h1>Your Pets</h1>
-<p> your pet name is :@Model.Name</p>
-<p> your pet's unique ID: @Model.Id</p>
-<p> your pet's life status: @Model.Life</p>
+<p>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</p>
+<p>@Html.DisplayNameFor(model => model.Life): @Html.DisplayFor(model => model.Life)</p>
+
+
+@using (Html.BeginForm())
+{
+    <input type="submit" value="" />
+}
 <form action="/routepath" method="post">
     <button type="submit">Feed Me!</button>
 </form>

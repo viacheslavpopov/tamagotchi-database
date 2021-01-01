@@ -1,4 +1,9 @@
+@{
+    Layout = "_Layout";  
+}
 @using Tamagotchi.Models;
+@model List<Tamagotchi.Models.Pet>;
+
 
 <h1>Your Pets</h1>
 @* <p> your pet name is :@Model.Name</p> *@
@@ -12,9 +17,7 @@
     @foreach (Pet pet in Model)
     {
         <li><a href='/pets/@pet.Id'>@pet.Name</a></li>
-        <ul>
-
-        </ul>
+       
     }
 </ul>
 

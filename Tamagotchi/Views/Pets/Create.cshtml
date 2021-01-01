@@ -1,0 +1,17 @@
+@{
+    Layout = "_Layout";  
+}
+
+@model Tamagotchi.Models.Pet
+
+
+    <h1>Create your pet</h1>
+    @using (Html.BeginForm())
+    {
+        @Html.LabelFor(model => model.Name)
+        @Html.TextBoxFor(model => model.Name)
+
+        <input type="submit" value="Create your pet">
+
+    }
+<h3>@Html.ActionLink("show all pets", "Index")</h3>
