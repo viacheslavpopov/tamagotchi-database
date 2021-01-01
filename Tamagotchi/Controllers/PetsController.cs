@@ -1,53 +1,39 @@
 using Microsoft.AspNetCore.Mvc;
 using Tamagotchi.Models;
 using System.Collections.Generic;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Tamagotchi.Controllers
 {
     public class PetsController : Controller
     {
-        [HttpGet("/pets")]
+        private readonly TamagotchiContext _db;
+        public PetsController(TamagotchiContext db)
+        {
+            _db = db;
+        }
         public ActionResult Index()
         {
-            // Pet myPet = new Pet(petName);
-            List<Pet> allPets = Pet.GetAll();
-            return View(allPets);
+            List<Pet> model = _db.Pets.ToList();
+            return View(model);
         }
-
-        [HttpGet("/pets/new")]
-        public ActionResult New()
+        public ActionResult Create()
         {
             return View();
         }
-
-        [HttpPost("/pets")]
-        public ActionResult Create(string petName)
+        [HttpPost]
+        public ActionResult Create(Pet pet)
         {
-            Pet myPet = new Pet(petName);
+            _db.Pets.Add(pet);
+            _db.SaveChanges();
             return RedirectToAction("Index");
         }
-
-        [HttpGet("/pets/{id}")]
-        public ActionResult Show(int id)
+        public ActionResult Details(int id)
         {
-            Pet foundPet = Pet.Find(id);
-            return View(foundPet);
-        }
-
-        [HttpPost("/pets/delete")]
-        public ActionResult DeleteAll()
-        {
-            Pet.ClearAll();
-            return View();
-        }
-
-        [HttpGet("/pets/{id}/edit")] 
-        public ActionResult Edit(string petName)
-        {
-            Pet feedPet = new Pet(petName);
-            feedPet.FeedPet();
-            // FeedPet(id);
-            return RedirectToAction("Show");
+            Pet thisPet = _db.Pets.FirstOrDefault(pets => pets.Id == id);
+            return View(thisPet);
         }
     }
 }
