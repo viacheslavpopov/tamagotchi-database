@@ -8,13 +8,11 @@ namespace Tamagotchi.Models
     {
         public string Name { get; set; }
         public int Id { get; }
-        public int Food { get; set; } = 100;
         public int Life { get; set; } = 100;
         private static List<Pet> _instances = new List<Pet> { };
         public Pet(string name)
         {
             Name = name;
-            // Food = food;
             // Life = life;
             _instances.Add(this);
             Id = _instances.Count;
@@ -36,10 +34,18 @@ namespace Tamagotchi.Models
             Life += 5;
         }
 
-        //Describe: Feed(property food(0-100))
+        public void Play()
+        {
+            Life += 5;
+        }
 
-        //Describe: Play(property happiness(0-100))
-
-        //Describe: PutToSleep(property rest(0-100))
+        public void PutToSleep() 
+        {
+            Life += 10;
+        }
+        public void PassTime()
+        {
+            Life -= 50;
+        }   
     }
 }

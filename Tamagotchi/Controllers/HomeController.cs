@@ -10,6 +10,5 @@ namespace Tamagotchi.Controllers
         {
             return View();
         }
-
     }
 }

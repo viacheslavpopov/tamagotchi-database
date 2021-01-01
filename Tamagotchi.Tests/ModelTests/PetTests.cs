@@ -25,9 +25,7 @@ namespace Tamagotchi.Tests
         {
             Pet newPet = new Pet("name");
             int testId = 1;
-            int testFood = 100;
             int testLife = 100;
-            Assert.AreEqual(testFood, newPet.Food);
             Assert.AreEqual(testId, newPet.Id);
             Assert.AreEqual(testLife, newPet.Life);
             ;
@@ -103,8 +101,6 @@ namespace Tamagotchi.Tests
             newPet01.FeedPet();
 
             Assert.AreEqual(testFedPet, newPet01.Life);
-
         }
-
     }
 }

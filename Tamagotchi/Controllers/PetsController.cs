@@ -49,6 +49,5 @@ namespace Tamagotchi.Controllers
             // FeedPet(id);
             return RedirectToAction("Show");
         }
-
     }
 }
