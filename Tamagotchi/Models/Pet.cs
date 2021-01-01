@@ -41,6 +41,8 @@ namespace Tamagotchi.Models
                     Pet newPet = (Pet) otherPet;
                     bool idEquality = (this.Id == newPet.Id);
                     bool nameEquality = (this.Name == newPet.Name);
+                    //bool foodEquality
+                    //bool lifeEquality
                     return (idEquality && nameEquality);
                 }
             }
@@ -66,11 +68,9 @@ namespace Tamagotchi.Models
             // life.ParameterName = "@PetLife";
             // life.Value = (int) this.Life;
             cmd.Parameters.Add(name);
-            // cmd2.Parameters.Add(food);
-            // cmd3.Parameters.Add(life);
+            // cmd.Parameters.Add(food);
+            // cmd.Parameters.Add(life);
             cmd.ExecuteNonQuery();
-            // cmd2.ExecuteNonQuery();
-            // cmd3.ExecuteNonQuery();
             Id = (int) cmd.LastInsertedId;
 
             conn.Close();
