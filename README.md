@@ -4,7 +4,7 @@
 
 </div>
 <p align="center">MVC Tamagotchi App, 12-16-2020</p>
-<p align="center"> By Nataliya Zhuravleva & Danielle Thompson</p>
+<p align="center"> By Carmen Kolodziej & Danielle Thompson</p>
 
 ## Description
 
@@ -16,7 +16,10 @@ All the Tamagotchi pets you collect over time will be display in your home scree
 
 Different buttons in your home page will call methods to feed your pet, play with your pet, and put it to sleep. These methods modify the properties of a single Tamagotchi object at a time - such as a food property.
 
-In the land of Tamagotchi, time passes, similar to how it passes for humans. Every time you press a pet's property, the food, happiness and sleep properties of all Tamagotchis should decrease. If any of these properties get to 0, your Tamagotchi object will report that it's dead.
+In the land of Tamagotchi, time passes, similar to how it passes for humans. Every time you take any action on one of your pets (play, feed, sleep), the life properties of all Tamagotchis will decrease in. If any of these properties get to 0, your Tamagotchi object will report that it's dead.
+
+<img src="~/img/MySQL Tamagotchi DB.png">
+<img src="~/img/Pets Table Screenshot.png">
 
 ## Specifications
 
@@ -29,25 +32,19 @@ In the land of Tamagotchi, time passes, similar to how it passes for humans. Eve
 | -------------------------------------------------------------------------- | -------------------------------------------- |
 | Create a Pet Object with properties: Name, Id, Food, Happiness, Rest, Life | Pet(string Name, int Id, int Food, int Life) |
 
-|
-
 </details>
 
 ### Tests
 
 Describe: CreateForm(add: Tamagotchi Name)
 
-Describe: Feed(property food(0-100)) 
+Describe: Feed(property life(+5)) 
 
-Describe: Play(property happiness(0-100))
+Describe: Play(property life(+5))
 
-Describe: PutToSleep(property rest(0-100))
+Describe: PutToSleep(property life(+10))
 
-Describe: AddHealthPoints(property life(0-100))
-
-Describe: SubtractHealthPoints(property life(0-100))
-
-Describe: TimePass(ToDecrease(food, happiness, rest, life))
+Describe: TimePass.ToDecrease(life(-50))
 
 ## Setup/Installation Requirements
 
@@ -117,12 +114,16 @@ If any errors or bugs occur with installation delete both bin and obj folders an
 - VS Code
 - GitHub
 
+### Under Construction 
+- Update software installation requirements (need to include MySQL database info)
+- Figure out how to call Feed, Play, &/or Rest to update the database
+- Add more styling, w/ pet images (stretch)
+- As of Jan 1, 2021, need to figure out routes in controller for updating data in database & displaying data to page.
+- Need to add a property for alive/dead (e.g. alive = true;) with a conditional on the pet details page - @foreach (Pet pet) @if ( life <=0, alive = false;) else (display pet details & buttons).
+- Use upper cohort Tamagotchi project for reference as needed: [Tamagotchi](https://github.com/dani-t-codes/Tamagotchi).
+
 ### License
 
 This software is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).
 
-<<<<<<< HEAD
 Copyright (c) 2020 Agata Kolodziej & Danielle Thompson
-=======
-Copyright (c) 2020 Nataliya Zhuravleva & Danielle Thompson
->>>>>>> database
