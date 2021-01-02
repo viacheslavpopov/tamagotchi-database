@@ -35,5 +35,34 @@ namespace Tamagotchi.Controllers
             Pet thisPet = _db.Pets.FirstOrDefault(pets => pets.Id == id);
             return View(thisPet);
         }
+        // public ActionResult Edit(int id)
+        // {
+        //     var thisPet = _db.Pets.FirstOrDefault(pets => pets.Id == id);
+        //     return View(thisPet);
+        // }
+        // [HttpPost]
+        // public ActionResult Edit(Pet pet)
+        // {   
+        //     _db.Entry(pet).State = EntityState.Modified;
+        //     // _db.Pets.PassTime();
+        //     _db.SaveChanges();
+        //     return RedirectToAction("Index");
+        // }
+        [HttpPost]
+        public ActionResult PassTime(int id)
+        {
+            var thisPet = _db.Pets.FirstOrDefault(pets => pets.Id == id);
+            thisPet.PassTime();
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
+
+    // [HttpPost("/pets/{id}/feed")]
+    // public ActionResult Feed(int id)
+    // {
+    //   Pet foundPet = Pet.Find(id);
+    //   foundPet.Feed();
+    //   return RedirectToAction("Show");    //RediredtToAction("Show", new { id = })
+    // }
