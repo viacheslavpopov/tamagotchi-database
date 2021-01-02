@@ -8,20 +8,26 @@
 <p>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</p>
 <p>@Html.DisplayNameFor(model => model.Life): @Html.DisplayFor(model => model.Life)</p>
 
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.Id)
+    <input type="submit" value="Kill" />
+}
 
 @using (Html.BeginForm())
 {
-    <input type="submit" value="" />
+     @Html.HiddenFor(model => model.Id)
+    <input type="submit" value="Feed me" />
 }
-<form action="/routepath" method="post">
-    <button type="submit">Feed Me!</button>
-</form>
-<form action="/routepath" method="post">
-    <button type="submit">Play with Me!</button>
-</form>
-<form action="/routepath" method="post">
-    <button type="submit">I'm tired!</button>
-</form>
-<form action="/items/delete" method="post">
-    <button type="submit" name="button">Clear All Items</button>
-</form>
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.Id)
+    <input type="submit" value="Play with me" />
+}
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.Id)
+    <input type="submit" value="Delete" />
+}
+<h3>@Html.ActionLink("View all pets", "Index")</h3>
+<h3>@Html.ActionLink("Kill pet", "Edit")</h3>

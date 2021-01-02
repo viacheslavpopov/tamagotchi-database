@@ -1,8 +1,17 @@
 @{
     Layout = "_Layout";  
 }
+@using Tamagotchi.Models;
+@model Tamagotchi.Models.Pet
 
-<h1>Your Pet's updated stats: </h1>
+@* <h1>Your Pet's updated stats: </h1>
 <p>Pet name is :@Model.Name</p>
 <p>Pet's unique ID: @Model.Id</p>
-<p>Pet's life status: @Model.Life</p>
+<p>Pet's life status: @Model.Life</p> *@
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.Id)
+    
+    <input type="submit" value="Kill" />
+}
