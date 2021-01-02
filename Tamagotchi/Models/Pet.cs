@@ -8,26 +8,22 @@ namespace Tamagotchi.Models
     public class Pet
     {
         public string Name { get; set; }
-        public int Id { get; }
+        public int Id { get; set; }
         public int Life { get; set; } = 100;
-
-        public Pet(string name)
+        public void PassTime()
         {
-            Name = name;
-            // Life = life;
-        }
+            Life -= 50;
+        }   
         public void Play()
         {
+            PassTime();
             Life += 5;
         }
 
         public void PutToSleep() 
         {
+            PassTime();
             Life += 10;
         }
-        public void PassTime()
-        {
-            Life -= 50;
-        }   
     }
 }
