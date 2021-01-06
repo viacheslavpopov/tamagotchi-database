@@ -71,33 +71,52 @@ In order to run the application, please install .NET for your computer to recogn
 
 ##### Installing Packages
 
-- Navigate to the Bakery.Tests folder in the command line
-- Use the command `dotnet restore`
+#### Setting up a Local Database
 
-##### Run Console Application
+- Download [MySQL Server](https://dev.mysql.com/downloads/file/?id=484914).
+- Download [MySQL Workbench](https://dev.mysql.com/downloads/file/?id=484391).
+- (For more detailed instructions if either of the above technologies are unfamiliar to you, visit [this site](https://www.learnhowtoprogram.com/c-and-net/getting-started-with-c/installing-and-configuring-mysql)).
+- Run `dotnet build` when the project is on your local machine.
+- Run `dotnet ef migrations add Initial`
+  --> If there is an error stating "Unable to resolve project", this means the command wasn't run in the correct directory.
+- Entity creates three files in the Migrations directory.
+- Run the following command: `dotnet ef database update`.
 
-- Navigate to the Bakery folder in the command line
-- Use the command `dotnet build` to compile the code
-- Use the command `dotnet run` to execute the compiled code
-  - Enter the type of bread, number (int) of loaves and pasteries you would like to order
-  - Enjoy the console application!
-  - To exit press Ctrl + C
+#### MySQL Password Protection & .gitignore
 
-##### View Online
+Once the project has been cloned to your computer and you have all the necessary items on your local computer, open the project in the application of your choice.
 
-- To view in browser click the GH-Pages link: [Name of App](URL)
-- what to do when open online
+Create a file in the root directory of the project called "appsettings.json". Add the following snippet of code to the appsettings.json file:
+
+```
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost;Port=3306;database=registrar;uid=root;pwd=YOUR-PASSWORD-HERE;"
+    }
+}
+```
+
+Where you see "YOUR-PASSWORD-HERE" is where you put the password you created for your MySQL server. Your server name and port might vary depending on your local system. Check MySQL Workbench Connections to determine if the local host and port number match and adjust as needed.
+
+Create a .gitignore file and add the following files & folders to it:
+
+- obj/
+- bin/
+- .vscode/
+- .DS_Store
+- appsettings.json
 
 ##### Open Locally
 
-- Click on the link to my repository: [My Repository](URL)
-- Click on the green "Code" button and copy the repository URL
-- Open your terminal and use the command `git clone REPO URL HERE` into the directory you would like to clone the repository
-- Open in text editor to view code and make changes
+* Navigate to the project folder on your Terminal or CMD.
+* Run the command `code .` to open the folder in VS Code. Otherwise, find and open the project folder in the code editor of your choice.
+* `dotnet build` will get bin/ and obj/ folders downloaded.
+* `dotnet run` will run the application.
+* `dotnet restore` to install packages listed in project's boilerplate.
 
 ## Known Bugs
 
-TODO
+No known bugs as of now. [Please report any bugs found here.](https://github.com/dani-t-codes/tamagotchi-database/issues)
 
 ## Support and Contact Details
 
@@ -114,7 +133,7 @@ If any errors or bugs occur with installation delete both bin and obj folders an
 - VS Code
 - GitHub
 
-### Under Construction 
+### Under Construction
 - Update software installation requirements (need to include MySQL database info)
 - Figure out how to call Feed, Play, &/or Rest to update the database
 - Add more styling, w/ pet images (stretch)
