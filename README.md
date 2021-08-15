@@ -4,7 +4,6 @@
 
 </div>
 <p align="center">MVC Tamagotchi App, 12-16-2020</p>
-<p align="center"> By Carmen Kolodziej & Danielle Thompson</p>
 
 ## Description
 
