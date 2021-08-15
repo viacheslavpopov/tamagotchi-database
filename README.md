@@ -56,7 +56,7 @@ Describe: TimePass.ToDecrease(life(-50))
 
 ##### Open Locally
 
-- Click on the link to my repository: [My Repository](https://github.com/agatakolohe/PierresBakery.Solution.git)
+- Click on the link to my repository
 - Click on the green "Code" button and copy the repository URL
 - Open your terminal and use the command `git clone REPO URL HERE` into the directory you would like to clone the repository
 - Open in text editor to view code and make changes
@@ -114,13 +114,9 @@ Create a .gitignore file and add the following files & folders to it:
 * `dotnet run` will run the application.
 * `dotnet restore` to install packages listed in project's boilerplate.
 
-## Known Bugs
-
-No known bugs as of now. [Please report any bugs found here.](https://github.com/dani-t-codes/tamagotchi-database/issues)
-
 ## Support and Contact Details
 
-If any errors or bugs occur with installation delete both bin and obj folders and follow the Installing Packages and Run Console Application instructions again. Get help or report a bug you have found in the .NET platform at [.NET Support](https://dotnet.microsoft.com/platform/support). Or please email me, <agatakolohe@gmail.com>.
+If any errors or bugs occur with installation delete both bin and obj folders and follow the Installing Packages and Run Console Application instructions again. Get help or report a bug you have found in the .NET platform at [.NET Support](https://dotnet.microsoft.com/platform/support).
 
 ## Technologies Used
 
@@ -139,10 +135,3 @@ If any errors or bugs occur with installation delete both bin and obj folders an
 - Add more styling, w/ pet images (stretch)
 - As of Jan 1, 2021, need to figure out routes in controller for updating data in database & displaying data to page.
 - Need to add a property for alive/dead (e.g. alive = true;) with a conditional on the pet details page - @foreach (Pet pet) @if ( life <=0, alive = false;) else (display pet details & buttons).
-- Use upper cohort Tamagotchi project for reference as needed: [Tamagotchi](https://github.com/dani-t-codes/Tamagotchi).
-
-### License
-
-This software is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).
-
-Copyright (c) 2020 Agata Kolodziej & Danielle Thompson
